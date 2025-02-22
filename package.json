@@ -1,6 +1,8 @@
 {
-  "name": "react-library",
-  "private": true,
+  "name": "@savannabergen/react_library",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/savannabergen"
+  },
   "version": "0.0.0",
   "type": "module",
   "types": "dist/index.d.ts",

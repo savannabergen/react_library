@@ -1,17 +1,39 @@
+import styled from 'styled-components';
+
 type CardProps = {
   title: string;
   description: string;
 };
 
-export const Card = ({ title, description }: CardProps) => {
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  padding: 1rem;
+
+  h2 {
+  font-family: sans-serif;
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  }
+
+  p {
+  font-family: sans-serif;
+  color: #333;
+  font-size: 1rem;
+  }
+`;
+
+export const CardComponent = ({ title, description }: CardProps) => {
   return (
-    <div className="ui">
-      <div className="ui-bg-white ui-rounded-lg ui-shadow-lg ui-overflow-hidden sm:max-w-xs lg:max-w-sm xl:max-w-md">
-        <div className="ui-px-6 ui-py-4">
-          <h2 className="ui-font-sans ui-text-red-700 ui-font-bold ui-text-xl ui-mb-2">{title}</h2>
-          <p className="ui-bg-white ui-border-none ui-rounded-none ui-font-sans ui-text-gray-700 ui-text-base">{description}</p>
-        </div>
-      </div>
-    </div>
+    <Card>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </Card>
   );
 };

@@ -1,17 +1,6 @@
 import styled from 'styled-components';
-
-type RadioProps = {
-  label: string;
-  checked: boolean;
-  disabled?: boolean;
-  onChange: (checked: boolean) => void;
-};
-
-type RadioInputProps = {
-  checked: boolean;
-  disabled?: boolean;
-  onChange: (e: any) => void;
-};
+import { RadioProps } from './radio.types';
+import { RadioInputProps } from './radio.types';
 
 const StyledRadioInputEnabled = styled.input``;
 const StyledRadioInputDisabled = styled.input`pointer-events: none; opacity: 0.5;`

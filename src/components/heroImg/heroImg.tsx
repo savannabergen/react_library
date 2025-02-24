@@ -2,18 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface HeroImgProps {
-src: string;
-alt: string;
+  src: string;
+  alt: string;
+  disabled?: boolean;
 }
 
-const StyledHeroImg = styled('img')`
+const StyledHeroImgEnabled = styled('img')`
   width: 100%;
   height: 500px;
   object-fit: cover;
 `;
 
-const HeroImg: React.FC<HeroImgProps> = ({ src, alt }) => {
-return <StyledHeroImg src={src} alt={alt} />;
+const StyledHeroImgDisabled = styled('img')`
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.5;
+  pointer-events: none;
+`;
+
+const HeroImg: React.FC<HeroImgProps> = ({ src, alt, disabled }) => {
+  const ImgComponent = disabled ? StyledHeroImgDisabled : StyledHeroImgEnabled;
+  return <ImgComponent src={src} alt={alt} />;
 };
 
 export default HeroImg;

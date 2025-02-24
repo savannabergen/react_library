@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-interface ImgProps {
-src: string;
-alt: string;
-disabled?: boolean;
-}
+import { ImgProps } from './img.types';
 
 const enabledStyles = styled.img`width: 100px; height: 100px; border-radius: 50%; opacity: 1; pointer-events: auto;`
 

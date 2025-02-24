@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-interface HeroImgProps {
-  src: string;
-  alt: string;
-  disabled?: boolean;
-}
+import { HeroImgProps } from './heroImg.types';
 
 const StyledHeroImgEnabled = styled('img')`
   width: 100%;

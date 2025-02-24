@@ -15,7 +15,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Enabled: Story = {
+export const Primary: Story = {
   args: {
     children: "Label Text",
     disabled: false,

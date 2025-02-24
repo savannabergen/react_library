@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-
-type ButtonProps = {
-  children: string;
-  disabled: boolean;
-};
+import { ButtonProps } from './button.types';
 
 const enabledStyles = styled.button`
   background-color: #4caf50;

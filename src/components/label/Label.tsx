@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-
-type LabelProps = {
-  children: string;
-  disabled?: boolean;
-};
+import type { LabelProps } from './label.types';
 
 const StyledLabelEnabled = styled.span``;
 const StyledLabelDisabled = styled.span`pointer-events: none; opacity: 0.5;`

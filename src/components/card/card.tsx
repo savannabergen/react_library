@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-
-type CardProps = {
-  title: string;
-  description: string;
-  disabled: boolean;
-};
+import { CardProps } from './card.types';
 
 const enabledStyles = styled.div`
   display: flex;

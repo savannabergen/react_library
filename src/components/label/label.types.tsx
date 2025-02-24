@@ -1,3 +1,5 @@
-type LabelProps = { children: string; };
+export type LabelProps = {
+  children: string;
+  disabled?: boolean;
 
-export default LabelProps;
+};

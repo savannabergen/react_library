@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-interface DropdownProps {
-  buttonText: string;
-  menuItems: string[];
-  disabled?: boolean;
-}
+import { DropdownProps } from './dropdown.types';
 
 const Dropdown: React.FC<DropdownProps> = ({ buttonText, menuItems, disabled }) => {
   return (

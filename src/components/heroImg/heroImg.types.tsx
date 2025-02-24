@@ -1,6 +1,5 @@
-interface HeroImgProps {
+export interface HeroImgProps {
   src: string;
   alt: string;
-  }
-
-  export default HeroImgProps;
+  disabled?: boolean;
+}

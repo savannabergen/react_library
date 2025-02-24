@@ -5,17 +5,26 @@ const meta = {
 title: "Example/Label",
 component: Label,
 tags: ["docsPage"],
-argTypes: {
-children: { control: { type: "text" } },
-},
+  argTypes: {
+    children: { control: { type: "text" } },
+    disabled: { control: { type: "boolean" } },
+  },
 } satisfies Meta<typeof Label>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-args: {
-children: "Label Text",
-},
+export const Enabled: Story = {
+  args: {
+    children: "Label Text",
+    disabled: false,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Label Text",
+    disabled: true,
+  },
 };

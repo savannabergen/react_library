@@ -21,3 +21,11 @@ src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVNer1ZryNxWVXojlY9H
 alt: 'Example Image',
 },
 };
+
+export const Disabled: Story = {
+  args: {
+  src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVNer1ZryNxWVXojlY9Hoyy1-4DVNAmn7lrg&s',
+  alt: 'Example Image',
+  disabled: true,
+  },
+};

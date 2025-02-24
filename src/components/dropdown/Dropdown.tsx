@@ -7,16 +7,16 @@ interface DropdownProps {
   disabled?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ buttonText, menuItems }) => {
+const Dropdown: React.FC<DropdownProps> = ({ buttonText, menuItems, disabled }) => {
   return (
-    <StyledDropdown>
-      <StyledButton>{buttonText}</StyledButton>
-      <StyledMenu>
-        {menuItems.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </StyledMenu>
-    </StyledDropdown>
+  <StyledDropdown>
+  <StyledButton disabled={disabled}>{buttonText}</StyledButton>
+  <StyledMenu>
+  {menuItems.map((item, index) => (
+  <p key={index}>{item}</p>
+  ))}
+  </StyledMenu>
+  </StyledDropdown>
   );
 };
 
@@ -30,6 +30,8 @@ const StyledButton = styled.button`
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  opacity: ${props => props.disabled ? 0.5 : 1};
+  pointer-events: ${props => props.disabled ? 'none' : 'auto'};
 `;
 
 const StyledMenu = styled.div`

@@ -4,12 +4,16 @@ import styled from 'styled-components';
 interface ImgProps {
 src: string;
 alt: string;
+disabled?: boolean;
 }
 
-const StyledImg = styled.img/* add your styles here */;
+const enabledStyles = styled.img`width: 100px; height: 100px; border-radius: 50%; opacity: 1; pointer-events: auto;`
 
-const Img: React.FC<ImgProps> = ({ src, alt }) => {
-return <StyledImg src={src} alt={alt} />;
+const disabledStyles = styled.img`width: 100px; height: 100px; border-radius: 50%; opacity: 0.5; pointer-events: none;`
+
+const Img: React.FC<ImgProps> = ({ src, alt, disabled }) => {
+const ImgComponent = disabled ? disabledStyles : enabledStyles;
+return <ImgComponent src={src} alt={alt} />;
 };
 
 export default Img;

@@ -8,9 +8,9 @@ const StyledRadioInputDisabled = styled.input`pointer-events: none; opacity: 0.5
 const StyledLabelEnabled = styled.span``;
 const StyledLabelDisabled = styled.span`pointer-events: none; opacity: 0.5;`
 
-const RadioInput = ({ checked, disabled }: RadioInputProps) => {
+const RadioInput = ({ checked, disabled, onChange }: RadioInputProps) => {
   const RadioComponent = disabled ? StyledRadioInputDisabled : StyledRadioInputEnabled;
-  return <RadioComponent type="radio" checked={checked} />;
+  return <RadioComponent type="radio" checked={checked} disabled={disabled} onChange={onChange} />;
 };
 
 export const Label = ({ children, disabled }: { children: string; disabled?: boolean; }) => {

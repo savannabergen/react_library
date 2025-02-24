@@ -1,3 +1,4 @@
-type TextProps = { children: string; };
-
-export default TextProps;
+export type TextProps = {
+  children: string;
+  disabled?: boolean;
+};

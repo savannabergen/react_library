@@ -1,15 +1,23 @@
-FROM node:20
+# Use an official Node.js 20 image
+FROM node:20-alpine
 
-WORKDIR /bergen_savanna_ui_garden
+# Set the working directory
+WORKDIR /savanna_bergen_ui_garden
 
+# Copy the package*.json files
 COPY package*.json ./
 
+# Install the dependencies
 RUN npm install
 
+# Copy the application code
 COPY . .
 
+# Build the production version
 RUN npm run build
 
+# Expose port 8083
 EXPOSE 8083
 
-CMD ["npm", "run", "start"]
+# Run the command to start the development server
+CMD ["npm", "run", "storybook"]

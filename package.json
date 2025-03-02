@@ -27,7 +27,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 8083",
     "build-storybook": "storybook build",
     "test": "jest"
   },

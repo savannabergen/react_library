@@ -1,23 +1,19 @@
-Bergen Savanna Coding Assignment 12
+# Bergen Savanna Coding Assignment 12
 
-Instructions
+Vite + React Typescript Storybook Component Library
 
-Build the Docker image
+## Instalation
 
 To build the Docker image, navigate to the root directory of the project and run the following command:
 
+```bash
+docker build -t bergen_savanna_assignment12 .
+```
 
-docker build -t bergen_savanna_coding_assignment12 .
+## Usage
 
+Run this command and manually navigate to localhost:8083
 
-Run the Docker container
-
-Once the image is built, you can run the Docker container using the following command:
-
-
-docker run -p 8083:8083 bergen_savanna_coding_assignment12 npm run storybook -- --no-open
-
-
-Access the site
-
-Open a web browser and navigate to http://localhost:8083 to access the Storybook site.
+```bash
+docker run -p 8083:8083 storybook npm run storybook -- --no-open
+```

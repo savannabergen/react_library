@@ -6,8 +6,8 @@ const meta = {
   component: Button,
   tags: ["docsPage"],
   argTypes: {
-  children: { control: { type: "text" } },
-  disabled: { control: { type: "boolean" } },
+    children: { control: { type: "text" } },
+    disabled: { control: { type: "boolean" } },
   },
 } satisfies Meta<typeof Button>;
 
@@ -17,14 +17,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-  children: "Button Text",
-  disabled: false,
+    children: "Button Text",
+    disabled: false,
   },
 };
 
 export const Disabled: Story = {
   args: {
-  children: "Disabled Button",
-  disabled: true,
+    children: "Disabled Button",
+    disabled: true,
   },
 };

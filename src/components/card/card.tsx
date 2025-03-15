@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { CardProps } from './card.types';
+import styled from "styled-components";
+import { CardProps } from "./card.types";
 
 const enabledStyles = styled.div`
   display: flex;
@@ -29,24 +29,25 @@ const disabledStyles = styled.div`
   opacity: 0.5;
   pointer-events: none;
   h2 {
-        font-family: sans-serif;
-        color: #ff0000;
-        font-weight: bold;
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-        }
+    font-family: sans-serif;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
   p {
-      font-family: sans-serif;
-      color: #333;
-      font-size: 1rem;
-      };`;
+    font-family: sans-serif;
+    color: #333;
+    font-size: 1rem;
+  }
+`;
 
 export const CardComponent = ({ title, description, disabled }: CardProps) => {
   const Card = disabled ? disabledStyles : enabledStyles;
   return (
-  <Card>
-    <h2>{title}</h2>
-    <p>{description}</p>
-  </Card>
+    <Card>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </Card>
   );
 };

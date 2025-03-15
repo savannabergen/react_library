@@ -1,12 +1,18 @@
-import styled from 'styled-components';
-import { TextProps } from './text.types';
+import styled from "styled-components";
+import { TextProps } from "./text.types";
 
-const StyledTextEnabled = styled.p`color: #000;`
+const StyledTextEnabled = styled.p`
+  color: #000;
+`;
 
-const StyledTextDisabled = styled.p`color: #ccc; opacity: 0.5; pointer-events: none;`
+const StyledTextDisabled = styled.p`
+  color: #ccc;
+  opacity: 0.5;
+  pointer-events: none;
+`;
 
 export const Text = ({ children, disabled }: TextProps) => {
-const TextComponent = disabled ? StyledTextDisabled : StyledTextEnabled;
+  const TextComponent = disabled ? StyledTextDisabled : StyledTextEnabled;
 
-return <TextComponent>{children}</TextComponent>;
+  return <TextComponent>{children}</TextComponent>;
 };

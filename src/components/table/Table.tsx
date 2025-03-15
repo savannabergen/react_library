@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { TableProps } from './table.types';
+import styled from "styled-components";
+import { TableProps } from "./table.types";
 
 const StyledTableEnabled = styled.table`
   border-collapse: collapse;
@@ -14,10 +14,14 @@ const StyledTableDisabled = styled.table`
 `;
 
 const StyledTheadEnabled = styled.thead``;
-const StyledTheadDisabled = styled.thead`opacity: 0.5;`;
+const StyledTheadDisabled = styled.thead`
+  opacity: 0.5;
+`;
 
 const StyledTrEnabled = styled.tr``;
-const StyledTrDisabled = styled.tr`opacity: 0.5;`;
+const StyledTrDisabled = styled.tr`
+  opacity: 0.5;
+`;
 
 const StyledThEnabled = styled.th`
   border: 1px solid #ddd;
@@ -33,17 +37,16 @@ const StyledThDisabled = styled.th`
 `;
 
 const StyledTbodyEnabled = styled.tbody``;
-const StyledTbodyDisabled = styled.tbody`opacity: 0.5;`;
+const StyledTbodyDisabled = styled.tbody`
+  opacity: 0.5;
+`;
 
 const StyledTfootEnabled = styled.tfoot``;
-const StyledTfootDisabled = styled.tfoot`opacity: 0.5;`;
+const StyledTfootDisabled = styled.tfoot`
+  opacity: 0.5;
+`;
 
-export const Table = ({
-  children,
-  headers,
-  footer,
-  disabled,
-}: TableProps) => {
+export const Table = ({ children, headers, footer, disabled }: TableProps) => {
   const TableComponent = disabled ? StyledTableDisabled : StyledTableEnabled;
   const TheadComponent = disabled ? StyledTheadDisabled : StyledTheadEnabled;
   const TrComponent = disabled ? StyledTrDisabled : StyledTrEnabled;

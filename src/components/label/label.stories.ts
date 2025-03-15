@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Label } from "./Label";
 
 const meta = {
-title: "Example/Label",
-component: Label,
-tags: ["docsPage"],
+  title: "Example/Label",
+  component: Label,
+  tags: ["docsPage"],
   argTypes: {
     children: { control: { type: "text" } },
     disabled: { control: { type: "boolean" } },

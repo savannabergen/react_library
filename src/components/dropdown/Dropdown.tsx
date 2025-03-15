@@ -1,17 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
-import { DropdownProps } from './dropdown.types';
+import React from "react";
+import styled from "styled-components";
+import { DropdownProps } from "./dropdown.types";
 
-const Dropdown: React.FC<DropdownProps> = ({ buttonText, menuItems, disabled }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  buttonText,
+  menuItems,
+  disabled,
+}) => {
   return (
-  <StyledDropdown>
-  <StyledButton disabled={disabled}>{buttonText}</StyledButton>
-  <StyledMenu>
-  {menuItems.map((item, index) => (
-  <p key={index}>{item}</p>
-  ))}
-  </StyledMenu>
-  </StyledDropdown>
+    <StyledDropdown>
+      <StyledButton disabled={disabled}>{buttonText}</StyledButton>
+      <StyledMenu>
+        {menuItems.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </StyledMenu>
+    </StyledDropdown>
   );
 };
 
@@ -25,8 +29,8 @@ const StyledButton = styled.button`
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  opacity: ${props => props.disabled ? 0.5 : 1};
-  pointer-events: ${props => props.disabled ? 'none' : 'auto'};
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
 `;
 
 const StyledMenu = styled.div`

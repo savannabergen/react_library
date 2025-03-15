@@ -19,9 +19,9 @@
       "default": "./dist/styles.css"
     }
   },
-  "husky":{
-    "hooks":{
-      "pre-commit": "npm run lint && npm run test"
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier --write . && git add -A ."
     }
   },
   "files": [
@@ -30,12 +30,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 8083",
     "build-storybook": "storybook build",
-    "test": "jest",
-    "prepare": "husky install"
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -68,6 +68,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-transformer-svg": "^2.1.0",
+    "prettier": "^3.5.3",
     "storybook": "^8.5.8",
     "tailwindcss": "^4.0.8",
     "ts-jest": "^29.2.6",

@@ -30,8 +30,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "prettier:check": "prettier --check .",
-    "format": "prettier --write .",
+    "prettier:check": "prettier --write --check .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 8083",
     "build-storybook": "storybook build",

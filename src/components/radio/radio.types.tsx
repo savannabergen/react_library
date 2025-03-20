@@ -8,5 +8,5 @@ export type RadioProps = {
 export type RadioInputProps = {
   checked: boolean;
   disabled?: boolean;
-  onChange: (e: any) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };

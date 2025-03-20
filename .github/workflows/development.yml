@@ -33,4 +33,3 @@ jobs:
         run: |
           npm run build
           docker build -t bergen_savanna_coding_assignment13 .
-          docker run -p 8018:8018 bergen_savanna_coding_assignment13

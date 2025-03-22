@@ -2,7 +2,7 @@
 
 Vite + React Typescript Storybook Component Library
 
-## Instalation
+## Installation
 
 To build the Docker image, navigate to the root directory of the project and run the following command:
 

@@ -28,6 +28,7 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "prettier:check": "prettier --write --check .",

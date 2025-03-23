@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test || { echo 'Commit failed due to failed lint or test'; exit 1; } && npm run format && git add -A ."
+      "pre-commit": "(npm run lint && npm run test && npm run format) || { echo 'Commit failed due to failed lint or test'; exit 1; }"
     }
   },
   "files": [

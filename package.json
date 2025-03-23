@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'pre-commit triggered'"
+      "pre-commit": "npm run format && npm run lint && npm run test"
     }
   },
   "files": [

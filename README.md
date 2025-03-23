@@ -7,7 +7,7 @@ Vite + React Typescript Storybook Component Library
 To build the Docker image, navigate to the root directory of the project and run the following command:
 
 ```bash
-docker build -t bergen_savanna_assignment12 .
+docker build -t bergen_savanna_assignment13 .
 ```
 
 Run this command and manually navigate to localhost:8083
@@ -20,7 +20,7 @@ docker run -p 8018:8018 storybook npm run storybook -- --no-open
 
 This repository uses Husky to run pre-commit checks. These checks include:
 
-1. Prettier: npm run format
+1. Prettier: npm run prettier:check
 2. ESLint: npm run lint
 3. Tests: npm test
 

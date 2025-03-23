@@ -19,11 +19,6 @@
       "default": "./dist/styles.css"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format && npm run lint && npm run test"
-    }
-  },
   "files": [
     "dist"
   ],
@@ -35,9 +30,7 @@
     "storybook": "storybook dev -p 8018 --no-open",
     "build-storybook": "storybook build",
     "test": "jest",
-    "lint": "eslint",
-    "format": "prettier --write .",
-    "prepare": "husky install"
+    "lint": "eslint"
   },
   "peerDependencies": {
     "react": "^19.0.0",

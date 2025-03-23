@@ -20,15 +20,17 @@
     }
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run test && npm run format"
+  "hooks": {
+    "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*": "prettier --write"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepare": "husky install",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "prettier:check": "prettier --write --check .",

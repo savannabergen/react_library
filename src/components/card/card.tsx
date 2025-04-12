@@ -42,12 +42,12 @@ const disabledStyles = styled.div`
   }
 `;
 
-export const CardComponent = ({ title, description, disabled }: CardProps) => {
+export const CardComponent = ({ title, children, disabled }: CardProps) => {
   const Card = disabled ? disabledStyles : enabledStyles;
   return (
     <Card>
       <h2>{title}</h2>
-      <p>{description}</p>
+      {children}
     </Card>
   );
 };

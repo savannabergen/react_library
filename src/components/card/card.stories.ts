@@ -7,7 +7,7 @@ const meta = {
   tags: ["docsPage"],
   argTypes: {
     title: { control: { type: "text" } },
-    description: { control: { type: "text" } },
+    children: { control: { type: "text" } },
     disabled: { control: { type: "boolean" } },
   },
 } satisfies Meta<typeof CardComponent>;
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     title: "Card Title",
-    description: "This is a card",
+    children: "This is a card",
     disabled: false,
   },
 };
@@ -27,7 +27,7 @@ export const Primary: Story = {
 export const Disabled: Story = {
   args: {
     title: "Another Card",
-    description: "With different content",
+    children: "With different content",
     disabled: true,
   },
 };

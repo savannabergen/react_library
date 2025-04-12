@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 export type CardProps = {
-  title: string;
-  description: string;
-  disabled: boolean;
+  title: ReactNode;
+  children: ReactNode;
+  disabled?: boolean;
 };

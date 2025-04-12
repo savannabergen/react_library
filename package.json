@@ -1,6 +1,6 @@
 {
   "name": "@savannabergen/react_library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publishConfig": {
     "access": "public"
   },
@@ -20,7 +20,7 @@
     }
   },
   "files": [
-    "*"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",

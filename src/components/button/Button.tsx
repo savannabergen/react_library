@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonProps } from './button.types'
+import { ButtonProps } from "./button.types";
 
 const enabledStyles = styled.button`
   background-color: #4caf50;
@@ -20,17 +20,29 @@ const disabledStyles = styled.button`
   opacity: 0.5;
 `;
 
-export const Button = ({ children, disabled, onClick, ...props }: ButtonProps) => {
+export const Button = ({
+  children,
+  disabled,
+  onClick,
+  ...props
+}: ButtonProps) => {
   const ButtonComponent = disabled ? disabledStyles : enabledStyles;
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
-    console.log('Button clicked!');
+    console.log("Button clicked!");
   };
 
   if (disabled) {
-    return <ButtonComponent {...props} disabled>{children}</ButtonComponent>;
+    return (
+      <ButtonComponent {...props} disabled>
+        {children}
+      </ButtonComponent>
+    );
   }
 
-  return <ButtonComponent {...props} onClick={handleClick}>{children}</ButtonComponent>;
+  return (
+    <ButtonComponent {...props} onClick={handleClick}>
+      {children}
+    </ButtonComponent>
+  );
 };
-

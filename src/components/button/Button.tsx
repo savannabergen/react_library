@@ -11,17 +11,16 @@ const enabledStyles = styled.button`
 `;
 
 const disabledStyles = styled.button`
-  background-color: #4caf50;
-  color: #fff;
+  background-color: #ccc; /* Changed to a more distinguishable color */
+  color: #666;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: not-allowed;
   opacity: 0.5;
-  pointer-events: none;
 `;
 
-export const Button = ({ children, disabled }: ButtonProps) => {
+export const Button = ({ children, disabled, ...props }: ButtonProps) => {
   const ButtonComponent = disabled ? disabledStyles : enabledStyles;
-  return <ButtonComponent>{children}</ButtonComponent>;
+  return <ButtonComponent {...props}>{children}</ButtonComponent>;
 };

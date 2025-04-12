@@ -2,7 +2,7 @@
   "name": "@savannabergen/react_library",
   "version": "0.0.5",
   "publishConfig": {
-  "access": "public"
+    "access": "public"
   },
   "type": "module",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     }
   },
   "files": [
-    "dist"
+    "*"
   ],
   "scripts": {
     "dev": "vite",

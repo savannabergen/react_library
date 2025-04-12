@@ -1,5 +1,5 @@
 # Use an official Node.js 20 image
-FROM node:20-alpine
+FROM node:23-alpine
 
 # Set the working directory
 WORKDIR /savanna_bergen_ui_garden_build_checks

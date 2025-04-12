@@ -1,2 +1,9 @@
 export { Card } from "./components/card";
 export { Button } from "./components/button";
+export { Dropdown } from "./components/dropdown";
+export { HeroImg } from "./components/heroImg";
+export { Img } from "./components/img";
+export { Label } from "./components/label";
+export { Radio } from "./components/radio";
+export { Table } from "./components/table";
+export { Text } from "./components/text";

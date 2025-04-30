@@ -1,6 +1,6 @@
 {
-  "name": "@savannabergen/react_library",
-  "version": "0.1.1",
+  "name": "@siavanna/ts_library",
+  "version": "0.1.3",
   "publishConfig": {
     "access": "public"
   },
@@ -20,7 +20,7 @@
     }
   },
   "files": [
-    "dist"
+    "*"
   ],
   "scripts": {
     "dev": "vite",

@@ -12,15 +12,14 @@ const MenuBtn = styled.div<MenuBtnProps>`
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   &.open .menu-btn__burger {
-    transform: translateX(-50px);
     background: transparent;
     box-shadow: none;
   }
   &.open .menu-btn__burger::before {
-    transform: rotate(45deg) translate(35px, -35px);
+    transform: rotate(45deg) translate(6px, 6px);
   }
   &.open .menu-btn__burger::after {
-    transform: rotate(-45deg) translate(35px, 35px);
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 `;
 

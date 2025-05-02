@@ -8,6 +8,10 @@ const meta = {
   argTypes: {
     children: { control: { type: "text" } },
     disabled: { control: { type: "boolean" } },
+    variant: {
+      control: { type: "inline-radio" },
+      options: ["default", "neon"],
+    },
   },
 } satisfies Meta<typeof Button>;
 
@@ -19,6 +23,15 @@ export const Primary: Story = {
   args: {
     children: "Button Text",
     disabled: false,
+    variant: "default",
+  },
+};
+
+export const Neon: Story = {
+  args: {
+    children: "Neon Button",
+    disabled: false,
+    variant: "neon",
   },
 };
 
@@ -26,5 +39,13 @@ export const Disabled: Story = {
   args: {
     children: "Disabled Button",
     disabled: true,
+  },
+};
+
+export const DisabledNeon: Story = {
+  args: {
+    children: "Disabled Neon Button",
+    disabled: true,
+    variant: "neon",
   },
 };

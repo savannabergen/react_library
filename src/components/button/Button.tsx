@@ -1,5 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ButtonProps } from "./button.types";
+
+const neonGlow = keyframes`
+  0% {
+    box-shadow: 0 0 10px #33CC33, 0 0 20px #33CC33, 0 0 30px #33CC33;
+    text-shadow: 0 0 5px #33CC33;
+  }
+  50% {
+    box-shadow: 0 0 15px #33CC33, 0 0 30px #33CC33, 0 0 45px #33CC33;
+    text-shadow: 0 0 10px #33CC33;
+  }
+  100% {
+    box-shadow: 0 0 10px #33CC33, 0 0 20px #33CC33, 0 0 30px #33CC33;
+    text-shadow: 0 0 5px #33CC33;
+  }
+`;
 
 const enabledStyles = styled.button`
   background-color: #4caf50;
@@ -20,28 +35,45 @@ const disabledStyles = styled.button`
   opacity: 0.5;
 `;
 
-export const Button = ({
-  children,
-  disabled,
-  onClick,
-  ...props
-}: ButtonProps) => {
-  const ButtonComponent = disabled ? disabledStyles : enabledStyles;
+const neonStyles = styled.button`
+  background-color: #000;
+  color: #33CC33;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #33CC33, 0 0 20px #33CC33, 0 0 30px #33CC33;
+  text-shadow: 0 0 5px #33CC33;
+  animation: ${neonGlow} 1.5s infinite;
+`;
+
+const disabledNeonStyles = styled.button`
+  background-color: #000;
+  color: #33CC33;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: 0 0 5px #33CC33, 0 0 10px #33CC33;
+  text-shadow: 0 0 2px #33CC33;
+`;
+
+export const Button = ({ children, variant, disabled, onClick, ...props }: ButtonProps) => {
+  let ButtonComponent;
+  if (variant === 'neon') {
+    ButtonComponent = disabled ? disabledNeonStyles : neonStyles;
+  } else {
+    ButtonComponent = disabled ? disabledStyles : enabledStyles;
+  }
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
     console.log("Button clicked!");
   };
 
-  if (disabled) {
-    return (
-      <ButtonComponent {...props} disabled>
-        {children}
-      </ButtonComponent>
-    );
-  }
-
   return (
-    <ButtonComponent {...props} onClick={handleClick}>
+    <ButtonComponent {...props} disabled={disabled} onClick={!disabled ? handleClick : undefined}>
       {children}
     </ButtonComponent>
   );

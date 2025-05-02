@@ -4,4 +4,5 @@ export interface ButtonProps {
   children: React.ReactNode;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  variant?: 'default' | 'neon';
 }

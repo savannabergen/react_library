@@ -3,16 +3,16 @@ import { ButtonProps } from "./button.types";
 
 const neonGlow = keyframes`
   0% {
-    box-shadow: 0 0 10px #33CC33, 0 0 20px #33CC33, 0 0 30px #33CC33;
-    text-shadow: 0 0 5px #33CC33;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.1);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
   }
   50% {
-    box-shadow: 0 0 15px #33CC33, 0 0 30px #33CC33, 0 0 45px #33CC33;
-    text-shadow: 0 0 10px #33CC33;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.7), 0 0 30px rgba(57, 255, 20, 0.5), 0 0 45px rgba(57, 255, 20, 0.3);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
   }
   100% {
-    box-shadow: 0 0 10px #33CC33, 0 0 20px #33CC33, 0 0 30px #33CC33;
-    text-shadow: 0 0 5px #33CC33;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.1);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
   }
 `;
 
@@ -36,32 +36,40 @@ const disabledStyles = styled.button`
 `;
 
 const neonStyles = styled.button`
-  background-color: #000;
-  color: #33CC33;
+  background-color: #333;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 10px #33CC33, 0 0 20px #33CC33, 0 0 30px #33CC33;
-  text-shadow: 0 0 5px #33CC33;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.1);
+  text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
   animation: ${neonGlow} 1.5s infinite;
 `;
 
 const disabledNeonStyles = styled.button`
   background-color: #000;
-  color: #33CC33;
+  color: #33cc33;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: not-allowed;
   opacity: 0.5;
-  box-shadow: 0 0 5px #33CC33, 0 0 10px #33CC33;
-  text-shadow: 0 0 2px #33CC33;
+  box-shadow:
+    0 0 5px #33cc33,
+    0 0 10px #33cc33;
+  text-shadow: 0 0 2px #33cc33;
 `;
 
-export const Button = ({ children, variant, disabled, onClick, ...props }: ButtonProps) => {
+export const Button = ({
+  children,
+  variant,
+  disabled,
+  onClick,
+  ...props
+}: ButtonProps) => {
   let ButtonComponent;
-  if (variant === 'neon') {
+  if (variant === "neon") {
     ButtonComponent = disabled ? disabledNeonStyles : neonStyles;
   } else {
     ButtonComponent = disabled ? disabledStyles : enabledStyles;
@@ -73,7 +81,11 @@ export const Button = ({ children, variant, disabled, onClick, ...props }: Butto
   };
 
   return (
-    <ButtonComponent {...props} disabled={disabled} onClick={!disabled ? handleClick : undefined}>
+    <ButtonComponent
+      {...props}
+      disabled={disabled}
+      onClick={!disabled ? handleClick : undefined}
+    >
       {children}
     </ButtonComponent>
   );

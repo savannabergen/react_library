@@ -42,7 +42,10 @@ const neonStyles = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.1);
+  box-shadow:
+    0 0 10px rgba(57, 255, 20, 0.5),
+    0 0 20px rgba(57, 255, 20, 0.3),
+    0 0 30px rgba(57, 255, 20, 0.1);
   text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
   animation: ${neonGlow} 1.5s infinite;
 `;

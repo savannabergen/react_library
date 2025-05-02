@@ -8,7 +8,7 @@ describe("Dropdown", () => {
     const menuItems = ["Item 1", "Item 2", "Item 3"];
     render(<Dropdown buttonText={buttonText} menuItems={menuItems} />);
     expect(screen.getByText(buttonText)).toBeInTheDocument();
-    expect(screen.getAllByRole("paragraph")).toHaveLength(menuItems.length);
+    expect(screen.getAllByText(/Item/)).toHaveLength(menuItems.length);
   });
 
   test("renders disabled dropdown with button and menu items", async () => {
@@ -16,6 +16,6 @@ describe("Dropdown", () => {
     const menuItems = ["Item 1", "Item 2", "Item 3"];
     render(<Dropdown buttonText={buttonText} menuItems={menuItems} disabled />);
     expect(screen.getByText(buttonText)).toBeInTheDocument();
-    expect(screen.getAllByRole("paragraph")).toHaveLength(menuItems.length);
+    expect(screen.getAllByText(/Item/)).toHaveLength(menuItems.length);
   });
 });

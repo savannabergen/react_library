@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { HamburgerProps } from "./hamburger.types";
+import { HamburgerProps, MenuBtnProps } from "./hamburger.types";
 import styled from "styled-components";
-
-interface MenuBtnProps {
-  size: number;
-}
 
 const MenuBtn = styled.div<MenuBtnProps>`
   position: relative;
@@ -16,20 +12,20 @@ const MenuBtn = styled.div<MenuBtnProps>`
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   &.open .menu-btn__burger {
-    transform: translateX(-50px);
+    transform: translateX(-30%);
     background: transparent;
     box-shadow: none;
   }
   &.open .menu-btn__burger::before {
-    transform: rotate(45deg) translate(35px, -35px);
+    transform: rotate(45deg) translate(15px, -15px);
   }
   &.open .menu-btn__burger::after {
-    transform: rotate(-45deg) translate(35px, 35px);
+    transform: rotate(-45deg) translate(15px, 15px);
   }
 `;
 
 const MenuBtnBurger = styled.div`
-  width: 50px;
+  width: 60%;
   height: 6px;
   background: #fff;
   border-radius: 5px;
@@ -39,7 +35,7 @@ const MenuBtnBurger = styled.div`
   &::after {
     content: "";
     position: absolute;
-    width: 50px;
+    width: 100%;
     height: 6px;
     background: #fff;
     border-radius: 5px;
@@ -47,10 +43,10 @@ const MenuBtnBurger = styled.div`
     transition: all 0.5s ease-in-out;
   }
   &::before {
-    transform: translateY(-16px);
+    transform: translateY(-10px);
   }
   &::after {
-    transform: translateY(16px);
+    transform: translateY(10px);
   }
 `;
 

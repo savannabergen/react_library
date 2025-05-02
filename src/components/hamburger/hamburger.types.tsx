@@ -1,3 +1,4 @@
+// hamburger.types.ts
 export interface HamburgerProps {
   /**
    * Whether the hamburger menu is open or not.
@@ -19,4 +20,8 @@ export interface HamburgerProps {
    * Size of the hamburger menu button.
    */
   size?: number;
+}
+
+export interface MenuBtnProps {
+  size: number;
 }

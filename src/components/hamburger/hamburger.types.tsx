@@ -15,4 +15,8 @@ export interface HamburgerProps {
    * Custom style for the hamburger menu button.
    */
   style?: React.CSSProperties;
+  /**
+   * Size of the hamburger menu button.
+   */
+  size?: number;
 }

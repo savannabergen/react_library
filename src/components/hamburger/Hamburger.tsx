@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
-import { HamburgerProps } from './hamburger.types';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { HamburgerProps } from "./hamburger.types";
+import styled from "styled-components";
 
-const MenuBtn = styled.div`
+interface MenuBtnProps {
+  size: number;
+}
+
+const MenuBtn = styled.div<MenuBtnProps>`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-
   &.open .menu-btn__burger {
     transform: translateX(-50px);
     background: transparent;
     box-shadow: none;
   }
-
   &.open .menu-btn__burger::before {
     transform: rotate(45deg) translate(35px, -35px);
   }
-
   &.open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
   }
@@ -34,9 +35,9 @@ const MenuBtnBurger = styled.div`
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
   transition: all 0.5s ease-in-out;
-
-  &::before, &::after {
-    content: '';
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
     width: 50px;
     height: 6px;
@@ -45,11 +46,9 @@ const MenuBtnBurger = styled.div`
     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
     transition: all 0.5s ease-in-out;
   }
-
   &::before {
     transform: translateY(-16px);
   }
-
   &::after {
     transform: translateY(16px);
   }
@@ -60,9 +59,9 @@ const Hamburger: React.FC<HamburgerProps> = ({
   onToggle,
   className,
   style,
+  size = 50,
 }) => {
   const [menuOpen, setMenuOpen] = useState(isOpen);
-
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
     if (onToggle) {
@@ -72,8 +71,9 @@ const Hamburger: React.FC<HamburgerProps> = ({
 
   return (
     <MenuBtn
+      size={size}
       data-testid="hamburger-button"
-      className={`${className} ${menuOpen ? 'open' : ''}`}
+      className={`${className} ${menuOpen ? "open" : ""}`}
       style={style}
       onClick={handleToggle}
     >

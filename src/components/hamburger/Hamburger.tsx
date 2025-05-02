@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { HamburgerProps, MenuBtnProps } from "./hamburger.types";
 import styled from "styled-components";
+import { HamburgerProps, MenuBtnProps } from "./hamburger.types";
 
 const MenuBtn = styled.div<MenuBtnProps>`
   position: relative;
@@ -12,30 +12,31 @@ const MenuBtn = styled.div<MenuBtnProps>`
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   &.open .menu-btn__burger {
-    transform: translateX(-30%);
+    transform: translateX(-50px);
     background: transparent;
     box-shadow: none;
   }
   &.open .menu-btn__burger::before {
-    transform: rotate(45deg) translate(15px, -15px);
+    transform: rotate(45deg) translate(35px, -35px);
   }
   &.open .menu-btn__burger::after {
-    transform: rotate(-45deg) translate(15px, 15px);
+    transform: rotate(-45deg) translate(35px, 35px);
   }
 `;
 
 const MenuBtnBurger = styled.div`
-  width: 60%;
+  width: 50px;
   height: 6px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
   transition: all 0.5s ease-in-out;
+  position: relative;
   &::before,
   &::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 50px;
     height: 6px;
     background: #fff;
     border-radius: 5px;
@@ -43,10 +44,10 @@ const MenuBtnBurger = styled.div`
     transition: all 0.5s ease-in-out;
   }
   &::before {
-    transform: translateY(-10px);
+    transform: translateY(-16px);
   }
   &::after {
-    transform: translateY(10px);
+    transform: translateY(16px);
   }
 `;
 
@@ -55,7 +56,7 @@ const Hamburger: React.FC<HamburgerProps> = ({
   onToggle,
   className,
   style,
-  size = 50,
+  size = 80,
 }) => {
   const [menuOpen, setMenuOpen] = useState(isOpen);
   const handleToggle = () => {

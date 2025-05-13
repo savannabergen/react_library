@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { NavbarProps } from './navbar.types';
+import styled from "styled-components";
+import { NavbarProps } from "./navbar.types";
 
 const StyledNavbar = styled.nav`
   display: flex;

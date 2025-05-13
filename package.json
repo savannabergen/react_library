@@ -1,27 +1,18 @@
 {
   "name": "@siavanna/ts_library",
-  "version": "0.2.4",
-  "publishConfig": {
-    "access": "public"
-  },
+  "version": "0.2.8",
   "type": "module",
   "types": "dist/index.d.ts",
-  "resolutions": {
-    "styled-components": "^5"
-  },
+  "main": "./dist/ui.umd.js",
+  "module": "./dist/ui.es.js",
   "exports": {
     ".": {
       "import": "./dist/ui.es.js",
       "require": "./dist/ui.umd.js"
     },
-    "./styles.css": {
-      "require": "./dist/styles.css",
-      "default": "./dist/styles.css"
-    }
+    "./styles.css": "./dist/styles.css"
   },
-  "files": [
-    "*"
-  ],
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -73,13 +64,14 @@
     "vite": "^6.1.0",
     "vite-plugin-dts": "^4.5.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
-  },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.8",
     "styled-components": "^6.1.15"
+  },
+  "eslintConfig": {
+    "extends": ["plugin:storybook/recommended"]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

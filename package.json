@@ -1,6 +1,6 @@
 {
   "name": "@siavanna/ts_library",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "./dist/ui.umd.js",
@@ -12,7 +12,9 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -69,7 +71,9 @@
     "styled-components": "^6.1.15"
   },
   "eslintConfig": {
-    "extends": ["plugin:storybook/recommended"]
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   },
   "publishConfig": {
     "access": "public"

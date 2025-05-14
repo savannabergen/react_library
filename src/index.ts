@@ -8,3 +8,4 @@ export { Radio } from "./components/radio";
 export { Table } from "./components/table";
 export { Text } from "./components/text";
 export { Hamburger } from "./components/hamburger";
+export { Navbar } from "./components/navbar";

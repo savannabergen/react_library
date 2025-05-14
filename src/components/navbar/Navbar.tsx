@@ -47,7 +47,15 @@ export function Navbar({ title, links }: NavbarProps) {
         <StyledNavbarLinks>
           {links.map((link, index) => (
             <StyledNavbarLink key={index}>
-              <StyledNavbarLinkAnchor href={link.href}>
+              <StyledNavbarLinkAnchor
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (link.onClick) {
+                    link.onClick();
+                  }
+                }}
+              >
                 {link.text}
               </StyledNavbarLinkAnchor>
             </StyledNavbarLink>

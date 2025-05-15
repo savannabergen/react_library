@@ -9,5 +9,8 @@ export interface NavbarProps {
     href: string;
     onClick?: () => void;
   }[];
-  LinkComponent?: React.ComponentType<{ to: string; children: React.ReactNode }>;
+  LinkComponent?: React.ComponentType<{
+    to: string;
+    children: React.ReactNode;
+  }>;
 }

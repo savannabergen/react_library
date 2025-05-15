@@ -43,7 +43,11 @@ export function Navbar({ title, logo, links, LinkComponent }: NavbarProps) {
   return (
     <StyledNavbar>
       {logo ? (
-        <img src={logo.src} alt={logo.alt} style={{ height: '2rem', marginRight: '1rem' }} />
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          style={{ height: "2rem", marginRight: "1rem" }}
+        />
       ) : (
         <StyledNavbarTitle>{title}</StyledNavbarTitle>
       )}
@@ -54,12 +58,15 @@ export function Navbar({ title, logo, links, LinkComponent }: NavbarProps) {
               {LinkComponent ? (
                 <LinkComponent to={link.href}>{link.text}</LinkComponent>
               ) : (
-                <StyledLink href={link.href} onClick={(e) => {
-                  e.preventDefault();
-                  if (link.onClick) {
-                    link.onClick();
-                  }
-                }}>
+                <StyledLink
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.onClick) {
+                      link.onClick();
+                    }
+                  }}
+                >
                   {link.text}
                 </StyledLink>
               )}

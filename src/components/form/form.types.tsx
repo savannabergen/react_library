@@ -4,7 +4,9 @@ export interface FormProps {
     type: string;
     name: string;
     value: string;
-    onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    onChange: (
+      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    ) => void;
   }[];
   buttonText: string;
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;

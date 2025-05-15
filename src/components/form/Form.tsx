@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { FormProps } from './form.types';
+import styled from "styled-components";
+import { FormProps } from "./form.types";
 
 const FormContainer = styled.form`
   display: flex;
@@ -71,7 +71,10 @@ const SubmitButton = styled.button`
   border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -87,10 +90,21 @@ const Form = ({ fields, buttonText, onSubmit, children }: FormProps) => (
     {fields.map((field) => (
       <FieldContainer key={field.name}>
         <Label htmlFor={field.name}>{field.label}</Label>
-        {field.type === 'textarea' ? (
-          <TextArea id={field.name} name={field.name} value={field.value} onChange={field.onChange} />
+        {field.type === "textarea" ? (
+          <TextArea
+            id={field.name}
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+          />
         ) : (
-          <Input id={field.name} type={field.type} name={field.name} value={field.value} onChange={field.onChange} />
+          <Input
+            id={field.name}
+            type={field.type}
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+          />
         )}
       </FieldContainer>
     ))}

@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Form from './Form';
+import type { Meta, StoryObj } from "@storybook/react";
+import Form from "./Form";
 
 const meta = {
-  title: 'Components/Form',
+  title: "Components/Form",
   component: Form,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
 } satisfies Meta<typeof Form>;
 
@@ -18,28 +18,28 @@ export const Default: Story = {
   args: {
     fields: [
       {
-        label: 'Name',
-        type: 'text',
-        name: 'name',
-        value: '',
+        label: "Name",
+        type: "text",
+        name: "name",
+        value: "",
         onChange: () => {},
       },
       {
-        label: 'Email',
-        type: 'email',
-        name: 'email',
-        value: '',
+        label: "Email",
+        type: "email",
+        name: "email",
+        value: "",
         onChange: () => {},
       },
       {
-        label: 'Message',
-        type: 'textarea',
-        name: 'message',
-        value: '',
+        label: "Message",
+        type: "textarea",
+        name: "message",
+        value: "",
         onChange: () => {},
       },
     ],
-    buttonText: 'Submit',
+    buttonText: "Submit",
     onSubmit: () => {},
   },
 };

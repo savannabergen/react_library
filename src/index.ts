@@ -10,3 +10,4 @@ export { Text } from "./components/text";
 export { Hamburger } from "./components/hamburger";
 export { Navbar } from "./components/navbar";
 export { Form } from "./components/form";
+export { Gallery } from "./components/gallery";

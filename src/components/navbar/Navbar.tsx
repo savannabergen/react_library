@@ -1,13 +1,19 @@
 import styled from "styled-components";
 import { NavbarProps } from "./navbar.types";
 
-const StyledNavbar = styled.nav`
+const StyledNavbar = styled.nav<{ theme: "light" | "dark" }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: ${(props) =>
+    props.theme === "light" ? "#f9f9f9" : "#333"};
+  color: ${(props) => (props.theme === "light" ? "#333" : "#fff")};
   padding: 1rem;
+  box-shadow: 0 2px 4px
+    ${(props) =>
+      props.theme === "light" ? "rgba(0, 0, 0, 0.1)" : "rgba(0, 0, 0, 0.5)"};
+  border-bottom: ${(props) =>
+    props.theme === "light" ? "1px solid #ddd" : "none"};
 `;
 
 const StyledNavbarTitle = styled.div`
@@ -30,18 +36,24 @@ const StyledNavbarLink = styled.li`
   }
 `;
 
-const StyledLink = styled.a`
-  color: #fff;
+const StyledLink = styled.a<{ theme: "light" | "dark" }>`
+  color: ${(props) => (props.theme === "light" ? "#337ab7" : "#fff")};
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   &:hover {
-    color: #ccc;
+    color: ${(props) => (props.theme === "light" ? "#23527c" : "#ccc")};
   }
 `;
 
-export function Navbar({ title, logo, links, LinkComponent }: NavbarProps) {
+export function Navbar({
+  title,
+  logo,
+  links,
+  LinkComponent,
+  theme = "light",
+}: NavbarProps) {
   return (
-    <StyledNavbar>
+    <StyledNavbar theme={theme}>
       {logo ? (
         <img
           src={logo.src}
@@ -59,6 +71,7 @@ export function Navbar({ title, logo, links, LinkComponent }: NavbarProps) {
                 <LinkComponent to={link.href}>{link.text}</LinkComponent>
               ) : (
                 <StyledLink
+                  theme={theme}
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();

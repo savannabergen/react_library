@@ -8,6 +8,12 @@ const meta = {
   argTypes: {
     title: { control: { type: "text" } },
     links: { control: { type: "object" } },
+    theme: {
+      control: {
+        type: "select",
+        options: ["light", "dark"],
+      },
+    },
   },
 } satisfies Meta<typeof Navbar>;
 
@@ -19,9 +25,10 @@ const handleLinkClick = () => {
   console.log("Link clicked");
 };
 
-export const Default: Story = {
+export const DefaultLight: Story = {
   args: {
     title: "My App",
+    theme: "light",
     links: [
       { text: "Home", href: "#", onClick: handleLinkClick },
       { text: "About", href: "#", onClick: handleLinkClick },
@@ -30,23 +37,68 @@ export const Default: Story = {
   },
 };
 
-export const EmptyLinks: Story = {
+export const DefaultDark: Story = {
   args: {
     title: "My App",
+    theme: "dark",
+    links: [
+      { text: "Home", href: "#", onClick: handleLinkClick },
+      { text: "About", href: "#", onClick: handleLinkClick },
+      { text: "Contact", href: "#", onClick: handleLinkClick },
+    ],
+  },
+};
+
+export const EmptyLinksLight: Story = {
+  args: {
+    title: "My App",
+    theme: "light",
     links: [],
   },
 };
 
-export const SingleLink: Story = {
+export const EmptyLinksDark: Story = {
   args: {
     title: "My App",
+    theme: "dark",
+    links: [],
+  },
+};
+
+export const SingleLinkLight: Story = {
+  args: {
+    title: "My App",
+    theme: "light",
     links: [{ text: "Home", href: "#", onClick: handleLinkClick }],
   },
 };
 
-export const ManyLinks: Story = {
+export const SingleLinkDark: Story = {
   args: {
     title: "My App",
+    theme: "dark",
+    links: [{ text: "Home", href: "#", onClick: handleLinkClick }],
+  },
+};
+
+export const ManyLinksLight: Story = {
+  args: {
+    title: "My App",
+    theme: "light",
+    links: [
+      { text: "Home", href: "#", onClick: handleLinkClick },
+      { text: "About", href: "#", onClick: handleLinkClick },
+      { text: "Contact", href: "#", onClick: handleLinkClick },
+      { text: "FAQ", href: "#", onClick: handleLinkClick },
+      { text: "Terms", href: "#", onClick: handleLinkClick },
+    ],
+  },
+};
+
+export const ManyLinksDark: Story = {
+  args: {
+    title: "My App",
+    theme: "dark",
     links: [
       { text: "Home", href: "#", onClick: handleLinkClick },
       { text: "About", href: "#", onClick: handleLinkClick },

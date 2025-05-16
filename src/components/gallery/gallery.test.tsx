@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import '@testing-library/jest-dom'; // Add this line
+import "@testing-library/jest-dom"; // Add this line
 import Gallery from "./Gallery";
 
 describe("Gallery component", () => {

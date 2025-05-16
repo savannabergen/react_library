@@ -1,13 +1,12 @@
 {
   "name": "@siavanna/ts_library",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "./dist/ui.umd.js",
   "module": "./dist/ui.es.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/ui.es.js",
       "require": "./dist/ui.umd.js"
     },
@@ -18,7 +17,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b tsconfig.json && vite build",
     "prettier:check": "prettier --write --check .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 8018 --no-open",

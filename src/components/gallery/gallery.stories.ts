@@ -16,9 +16,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const images = [
-  { src: "https://picsum.photos/200/300", alt: "Image 1", title: "Image 1 Title" },
+  {
+    src: "https://picsum.photos/200/300",
+    alt: "Image 1",
+    title: "Image 1 Title",
+  },
   { src: "https://picsum.photos/200/301", alt: "Image 2" },
-  { src: "https://picsum.photos/200/302", alt: "Image 3", link: "https://www.example.com", title: "Image 3 Title" },
+  {
+    src: "https://picsum.photos/200/302",
+    alt: "Image 3",
+    link: "https://www.example.com",
+    title: "Image 3 Title",
+  },
 ];
 
 export const Default: Story = {
@@ -41,7 +50,10 @@ export const GalleryWithAllLinks: Story = {
   args: {
     title: "My Gallery",
     description: "This is a description of my gallery",
-    images: images.map((image) => ({ ...image, link: "https://www.example.com" })),
+    images: images.map((image) => ({
+      ...image,
+      link: "https://www.example.com",
+    })),
   },
 };
 

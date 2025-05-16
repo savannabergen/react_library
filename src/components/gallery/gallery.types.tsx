@@ -11,4 +11,3 @@ export interface GalleryProps {
   description?: string;
   images: Image[];
 }
-

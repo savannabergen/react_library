@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GalleryProps } from "./gallery.types";
-import { Image } from './gallery.types';
+import { Image } from "./gallery.types";
 
 const GalleryContainer = styled.div`
   display: flex;
@@ -84,7 +84,7 @@ const Gallery: React.FC<GalleryProps> = ({ title, description, images }) => {
 
   const handleImageClick = (image: Image) => {
     if (image.link) {
-      window.open(image.link, '_blank');
+      window.open(image.link, "_blank");
     } else {
       setFullSizeImage(image.src);
     }
@@ -97,7 +97,11 @@ const Gallery: React.FC<GalleryProps> = ({ title, description, images }) => {
   return (
     <div>
       {title && <h2 style={{ textAlign: "center" }}>{title}</h2>}
-      {description && <p style={{ textAlign: "center", marginBottom: "20px" }}>{description}</p>}
+      {description && (
+        <p style={{ textAlign: "center", marginBottom: "20px" }}>
+          {description}
+        </p>
+      )}
       <GalleryContainer>
         {images.map((image: Image, index: number) => (
           <GalleryItem key={index} onClick={() => handleImageClick(image)}>
@@ -113,7 +117,11 @@ const Gallery: React.FC<GalleryProps> = ({ title, description, images }) => {
       {fullSizeImage && (
         <FullSizeImageOverlay onClick={handleCloseFullSizeImage}>
           <FullSizeImageContainer>
-            <img src={fullSizeImage} alt="Full size image" onClick={(e) => e.stopPropagation()} />
+            <img
+              src={fullSizeImage}
+              alt="Full size image"
+              onClick={(e) => e.stopPropagation()}
+            />
           </FullSizeImageContainer>
         </FullSizeImageOverlay>
       )}
